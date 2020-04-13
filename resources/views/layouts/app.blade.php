@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Todo</title>
+    <link rel="stylesheet" href="/css/app.css"></link>
 </head>
 <body>
-@include('includes.navbar')
-
     <div class="container">
-    @yield('content')
+    @include('includes.navbar')
     </div>
-
+    <div class="container">
+        @include('includes.msg')      
+        @yield('content')
+    </div>
     </body>
 </html>
