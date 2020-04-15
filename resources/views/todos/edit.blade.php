@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <a href="/todo/{{$todo->id}}" class="btn btn-default">Back</a>

@@ -47,7 +47,7 @@ class TodoController extends Controller
 
         $todo->save();
 
-        return redirect('/')->with('success', 'Todo Created');
+        return redirect('/todo/create')->with('success', 'Todo Created');
     }
 
     /**
