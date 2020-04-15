@@ -14,12 +14,23 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/' , 'TodoController@index');
 
-
-Route::resource('todo' , 'TodoController');
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::get('/' , 'TodoController@index');
+    
+    Route::resource('todo' , 'TodoController');
+});
+
+// Route::get('/home', function ($id) {
+//     if (Auth::user()->admin ==0 ){
+//         return view('home');
+//     }else{
+//         $users['users'] = \App\User::all();
+//         return view('', $users);
+//     }
+// });
